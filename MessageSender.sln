@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageSender", "MessageSender\MessageSender.csproj", "{6A54139C-EE85-4F94-8C6E-DD63382C1A12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageSender", "MessageSender\MessageSender.csproj", "{6A54139C-EE85-4F94-8C6E-DD63382C1A12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageSenderMVC", "MessageSenderMVC\MessageSenderMVC.csproj", "{A3140ADA-B131-4B15-8C6B-7415065CAEA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6A54139C-EE85-4F94-8C6E-DD63382C1A12}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A54139C-EE85-4F94-8C6E-DD63382C1A12}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A54139C-EE85-4F94-8C6E-DD63382C1A12}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
