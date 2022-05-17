@@ -14,7 +14,6 @@ namespace MessageSenderMVC.Controllers
         public IActionResult Index()
         {
             var tmp = personRepository.GetAll();
-            //var tmp = personRepository.ReadById(1);
             return View(tmp);
         }
 

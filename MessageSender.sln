@@ -5,7 +5,9 @@ VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageSender", "MessageSender\MessageSender.csproj", "{6A54139C-EE85-4F94-8C6E-DD63382C1A12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageSenderMVC", "MessageSenderMVC\MessageSenderMVC.csproj", "{A3140ADA-B131-4B15-8C6B-7415065CAEA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageSenderMVC", "MessageSenderMVC\MessageSenderMVC.csproj", "{A3140ADA-B131-4B15-8C6B-7415065CAEA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewaySender", "GatewaySender\GatewaySender.csproj", "{0D6F7D94-9A6D-4DFD-9F79-13514E4C1D20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A3140ADA-B131-4B15-8C6B-7415065CAEA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D6F7D94-9A6D-4DFD-9F79-13514E4C1D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D6F7D94-9A6D-4DFD-9F79-13514E4C1D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D6F7D94-9A6D-4DFD-9F79-13514E4C1D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D6F7D94-9A6D-4DFD-9F79-13514E4C1D20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

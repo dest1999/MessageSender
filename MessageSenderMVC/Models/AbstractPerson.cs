@@ -15,7 +15,7 @@ public abstract class AbstractPerson
     public string EMail { get; set; }
     
     [Phone]
-    public string Phone { get; set; }
+    public string? Phone { get; set; }
 
     public abstract void CopyDataFrom(AbstractPerson abstractPerson);
 }
