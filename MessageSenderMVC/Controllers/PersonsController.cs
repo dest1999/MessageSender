@@ -46,5 +46,11 @@ namespace MessageSenderMVC.Controllers
             return RedirectToAction("index");
         }
 
+        public IActionResult Delete(int id)
+        {
+            personRepository.Delete(id);
+            return RedirectToAction("index");
+        }
+
     }
 }

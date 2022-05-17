@@ -12,8 +12,16 @@ public class InRamRepo : IRepository<Person>
 
     public void Create(Person person)
     {
-        person.Id = repository[^1].Id + 1;
-        repository.Add(person);
+        if (repository.Count < 1)
+        {
+            person.Id = 1;
+            repository.Add(person);
+        }
+        else
+        {
+            person.Id = repository[^1].Id + 1;
+            repository.Add(person);
+        }
     }
 
     public Person? ReadById(int id) => repository.FirstOrDefault(x => x.Id == id);
