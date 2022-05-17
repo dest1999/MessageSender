@@ -30,5 +30,21 @@ namespace MessageSenderMVC.Controllers
             personRepository.Create(person);
             return RedirectToAction("Index");
         }
+
+        public IActionResult Edit(int id)
+        {
+            var returnValue = personRepository.ReadById(id);
+            
+            return View(returnValue);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Person person)
+        {
+            personRepository.Update(person);
+
+            return RedirectToAction("index");
+        }
+
     }
 }
