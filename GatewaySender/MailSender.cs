@@ -16,7 +16,13 @@ public class MailSender : ISender
     [Required]
     public string Password { private get; set; }
     public bool SSL { get; set; } = false;
-
+    /// <summary>
+    /// Sending e-mail message
+    /// </summary>
+    /// <param name="from">sender</param>
+    /// <param name="to">recipient</param>
+    /// <param name="message">text message</param>
+    /// <returns>true if success sending</returns>
     public bool Send(string from, string to, string message)
     {
         using var mes = new MailMessage(from, to);
