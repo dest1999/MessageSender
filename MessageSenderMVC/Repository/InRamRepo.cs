@@ -1,6 +1,6 @@
 ﻿namespace MessageSenderMVC;
 
-public class InRamRepo : IRepository<Person>
+public class InRamRepo //: IRepository<Person>
 {
     private List<Person> repository = new()
     {

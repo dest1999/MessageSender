@@ -23,11 +23,11 @@ namespace MessageSenderMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(PersonViewModel personViewModel)
+        public async Task<IActionResult> CreateAsync(PersonViewModel personViewModel)
         {
             var person = new Person();
             person.CopyDataFrom(personViewModel);
-            personRepository.Create(person);
+            await personRepository.CreateAsync(person);
             return RedirectToAction("Index");
         }
 
@@ -39,9 +39,9 @@ namespace MessageSenderMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Person person)
+        public async Task<IActionResult> EditAsync(Person person)
         {
-            personRepository.Update(person);
+            await personRepository.Update(person);
 
             return RedirectToAction("Index");
         }
@@ -54,9 +54,9 @@ namespace MessageSenderMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Delete(Person person)
+        public async Task<IActionResult> DeleteAsync(Person person)
         {
-            personRepository.Delete(person.Id);
+            await personRepository.Delete(person.Id);
 
             return RedirectToAction("Index");
         }

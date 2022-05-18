@@ -9,23 +9,27 @@ public class MSSQLLocalRepository : IRepository<Person>
         localDB = dBServer;
     }
 
-    public void Create(Person person)
+    public async Task CreateAsync(Person person)
     {
-        throw new NotImplementedException();
+        localDB.Add(person);
+        await localDB.SaveChangesAsync();
     }
     public Person? ReadById(int id)
     {
-        throw new NotImplementedException();
+        var returnValue = localDB.Find<Person>(id);
+        return returnValue;
     }
 
-    public void Update(Person person)
+    public async Task Update(Person person)
     {
-        throw new NotImplementedException();
+        localDB.Update(person);
+        await localDB.SaveChangesAsync();
     }
 
-    public void Delete(int id)
+    public async Task Delete(int id)
     {
-        throw new NotImplementedException();
+        localDB.Remove<Person>(ReadById(id));
+        await localDB.SaveChangesAsync();
     }
 
     public IEnumerable<Person> GetAll()

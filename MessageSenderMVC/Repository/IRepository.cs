@@ -2,9 +2,9 @@
 
 public interface IRepository<T> where T : Person
 {
-    void Create(T person);
+    Task CreateAsync(T person);
     T? ReadById(int id);
-    void Update(T person);
-    void Delete(int id);
+    Task Update(T person);
+    Task Delete(int id);
     IEnumerable<T> GetAll();
 }
