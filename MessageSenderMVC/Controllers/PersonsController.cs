@@ -43,13 +43,22 @@ namespace MessageSenderMVC.Controllers
         {
             personRepository.Update(person);
 
-            return RedirectToAction("index");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
         {
-            personRepository.Delete(id);
-            return RedirectToAction("index");
+            //var personVM = new PersonViewModel();
+            //personVM.CopyDataFrom(personRepository.ReadById(id));
+            return View(personRepository.ReadById(id));
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Person person)
+        {
+            personRepository.Delete(person.Id);
+
+            return RedirectToAction("Index");
         }
 
     }

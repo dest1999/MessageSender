@@ -5,7 +5,7 @@ namespace MessageSenderMVC;
 public class PersonViewModel : AbstractPerson
 {
     [HiddenInput]
-    int Id { get; set; }
+    new int Id { get; set; }
     public override void CopyDataFrom(AbstractPerson person)
     {
         Id = person.Id;
