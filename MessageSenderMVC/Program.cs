@@ -1,3 +1,4 @@
+using GatewaySender;
 using MessageSenderMVC;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,9 @@ builder.Services.AddControllersWithViews();
 var connectionString = builder.Configuration.GetConnectionString("DBConnection");
 builder.Services.AddDbContext<MSSQLLocalDBContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddScoped<IRepository<Person>, MSSQLLocalRepository>();
+
+//builder.Services.AddSingleton<ISender>(new MailSender());
+builder.Services.AddSingleton<MailSender>();
 
 var app = builder.Build();
 

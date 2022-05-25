@@ -14,7 +14,7 @@ public class MailSender : ISender
 
     public string Login { get; set; }
     [Required]
-    public string Password { private get; set; }
+    public string Password { get; set; }
     public bool SSL { get; set; } = false;
     /// <summary>
     /// Sending e-mail message
@@ -26,6 +26,7 @@ public class MailSender : ISender
     public bool Send(string from, string to, string message)
     {
         using var mes = new MailMessage(from, to);
+        mes.Subject = "Theme";
         mes.Body = message;
 
         var login = new MailAddress(from).Address.ToString();

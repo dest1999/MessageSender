@@ -23,7 +23,7 @@ namespace MessageSenderMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAsync(PersonViewModel personViewModel)
+        public async Task<IActionResult> Create(PersonViewModel personViewModel)
         {
             var person = new Person();
             person.CopyDataFrom(personViewModel);
@@ -39,7 +39,7 @@ namespace MessageSenderMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> EditAsync(Person person)
+        public async Task<IActionResult> Edit(Person person)
         {
             await personRepository.Update(person);
 
@@ -54,7 +54,7 @@ namespace MessageSenderMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteAsync(Person person)
+        public async Task<IActionResult> Delete(Person person)
         {
             await personRepository.Delete(person.Id);
 
