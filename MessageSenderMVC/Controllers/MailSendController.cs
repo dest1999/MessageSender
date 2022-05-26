@@ -1,5 +1,6 @@
 ﻿using GatewaySender;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
 namespace MessageSenderMVC.Controllers
 {
@@ -32,6 +33,10 @@ namespace MessageSenderMVC.Controllers
             return RedirectToAction("Index");
         }
         
-
+        public IActionResult SendEmails()
+        {
+            Debug.WriteLine("send");
+            return RedirectToAction("Index");
+        }
     }
 }
