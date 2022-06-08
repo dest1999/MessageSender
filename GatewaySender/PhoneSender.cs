@@ -8,7 +8,7 @@ namespace GatewaySender;
 
 internal class PhoneSender : ISender
 {
-    public bool Send(string from, string to, string message)
+    public bool Send(string to, string message)
     {
         throw new NotImplementedException();
     }

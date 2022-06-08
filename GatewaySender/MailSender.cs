@@ -1,37 +1,38 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.Net;
 using System.Net.Mail;
 
 namespace GatewaySender;
 
+//public interface IMailSender : ISender { }
+
 public class MailSender : ISender
 {
     [Required]
-    public string ServerAddress { get; set; }
+    public string ServerAddress { get; set; }//SMTP adress?
     [Required]
     public int Port { get; set; }
 
-    public string Login { get; set; }
+    public string Login { get; set; }//full name (user@server)
     [Required]
     public string Password { get; set; }
     public bool SSL { get; set; } = false;
     /// <summary>
     /// Sending e-mail message
     /// </summary>
-    /// <param name="from">sender</param>
     /// <param name="to">recipient</param>
     /// <param name="message">text message</param>
     /// <returns>true if success sending</returns>
-    public bool Send(string from, string to, string message)
+    public bool Send(/*string from, */string to, string message)
     {
-        using var mes = new MailMessage(from, to);
-        mes.Subject = "Theme";
+        using var mes = new MailMessage(Login, to);
+        mes.Subject = "Data from " + DateTime.Now.ToString();
         mes.Body = message;
 
-        var login = new MailAddress(from).Address.ToString();
         using var mailClient = new SmtpClient(ServerAddress, Port);
-        mailClient.Credentials = new NetworkCredential(login, Password);
+        mailClient.Credentials = new NetworkCredential(mes.From.User, Password);
         mailClient.EnableSsl = SSL;
 
         try

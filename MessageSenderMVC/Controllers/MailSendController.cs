@@ -6,10 +6,12 @@ namespace MessageSenderMVC.Controllers
 {
     public class MailSendController : Controller
     {
-        private MailSender sender;
-        public MailSendController(MailSender Sender)
+        private readonly MailSender sender;
+        private readonly IRepository<Person> repository;
+        public MailSendController(MailSender Sender, IRepository<Person> Repository)
         {
             sender = Sender;
+            repository = Repository;
         }
 
         public IActionResult Index()
@@ -35,7 +37,7 @@ namespace MessageSenderMVC.Controllers
         
         public IActionResult SendEmails()
         {
-            Debug.WriteLine("send");
+            Mailer.Send(sender, repository);
             return RedirectToAction("Index");
         }
     }
