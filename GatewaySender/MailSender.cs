@@ -30,7 +30,7 @@ public class MailSender : ISender
         using var mes = new MailMessage(Login, to);
         mes.Subject = "Data from " + DateTime.Now.ToString();
         mes.Body = message;
-
+        mes.IsBodyHtml = true;
         using var mailClient = new SmtpClient(ServerAddress, Port);
         mailClient.Credentials = new NetworkCredential(mes.From.User, Password);
         mailClient.EnableSsl = SSL;
@@ -43,7 +43,8 @@ public class MailSender : ISender
         catch (Exception e)
         {
             Trace.TraceError(e.ToString());
-            throw;
+            Trace.TraceError($"Error sending to recipient: {to}");
+            return false;
         }
     }
 }

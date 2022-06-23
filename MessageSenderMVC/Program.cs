@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 //builder.Services.AddSingleton<IRepository<Person>, InRamRepo>();
 
-var connectionString = builder.Configuration.GetConnectionString("DBConnection");
+var connectionString = builder.Configuration.GetConnectionString("DBConnection"); //local db
+//var connectionString = builder.Configuration.GetConnectionString("RealServerDB"); //free hosting
 builder.Services.AddDbContext<MSSQLLocalDBContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddScoped<IRepository<Person>, MSSQLLocalRepository>();
 
