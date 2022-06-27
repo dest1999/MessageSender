@@ -17,5 +17,7 @@ public abstract class AbstractPerson
     [Phone]
     public string? Phone { get; set; }
 
+    public int? Age { get; set; }
+
     public abstract void CopyDataFrom(AbstractPerson abstractPerson);
 }
